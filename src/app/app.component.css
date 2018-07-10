@@ -1,0 +1,22 @@
+#sideContainer{
+	position: relative;
+	width: 300px;
+	background: #565252;
+}
+#sideContainer .side{
+	position: absolute;
+	width: 300px;
+	height: 100%;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	
+}
+
+#sideContainer .side .header{
+	height: 100px;
+	background: #343030;
+}
+#sideContainer .side .itemsContainer{
+	overflow-x: auto;
+}

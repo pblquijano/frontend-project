@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(assets/fonts/Montserrat-Bold.otf);
+}
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(assets/fonts/Montserrat-Light.otf);
+}
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url(assets/fonts/Montserrat-SemiBold.otf);
+}
+
+html, body, app-root{
+	width: 100%;
+	height: 100%;
+	margin:0px;
+}
+
+app-root{
+	flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 0%;
+}
