@@ -1,13 +1,19 @@
 <div id="sideContainer">
   <div class="side" fxLayout="column">
-    <div class="header"></div>
-    <div fxFlex class="itemsContainer">
-      
+    <div class="header" fxLayout="row" fxLayoutAlign="none center">
+    	<img src="../assets/images/pokeball.png" (click)="loadData()">
+    	<span>POKÉDEX</span>
+    </div>
+    <div fxFlex class="itemsContainer" >
+      <div *ngFor="let item of pokemon_response.results; let i = index" class="item" fxLayout="row">
+      	<span class="number">{{i+1}}</span>
+      	<span class="name">{{item.name}}</span>
+      </div>
     </div>
   </div>
 </div>
 
-<div id="itemContainer" fxFlex fxLayout="column" >
-  
+<div id="detailContainer" fxFlex fxLayout="column" >
+  <span class="no-pokemon">CHOOSE A POKÉMON</span>
 </div>
 
