@@ -72,7 +72,7 @@
 	position: relative;
 
 }
-
+img{border:0;}
 #detailContainer .no-pokemon{
 	position: absolute;
 	width: calc(100% - 16px);
@@ -84,4 +84,64 @@
     font-size: 60px;
     letter-spacing: 4px;
     color: rgba(0,0,0,0.08)
+}
+
+#detailContainer .main{
+	position: relative;
+}
+#detailContainer .main .imageContainer{
+	position: relative;
+	background: url(../assets/images/pokedex_bg.png) no-repeat; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	width: 240px;
+    height: 240px;
+    border-radius: 6px;
+}
+#detailContainer .main .imageContainer img{
+	position: absolute;
+	width: 96px;
+    height: 96px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+#detailContainer .main .type{
+	position: relative;
+	width: 100px;
+	background:#ccc;
+	margin:6px 3px;
+	padding: 6px;
+	border-radius: 3px;
+}
+#detailContainer .main .type span{
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-family: Montserrat-SemiBold, sans-serif;
+	font-size: 14px;
+    letter-spacing: 1px;
+    color: #000;
+    text-transform: uppercase;
+}
+#detailContainer .main .name{
+	font-family: Montserrat-Bold, sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #000;
+    text-align: center;
+    margin-top: 6px;
+    text-transform: uppercase;
+}
+#detailContainer .main .number{
+	font-family: Montserrat-SemiBold, sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #c5c5c5;
+    text-align: center;
+    line-height: 22px;
 }

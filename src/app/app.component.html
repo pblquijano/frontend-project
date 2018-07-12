@@ -5,7 +5,7 @@
     	<span>POKÉDEX</span>
     </div>
     <div fxFlex class="itemsContainer" >
-      <div *ngFor="let item of pokemon_response.results; let i = index" class="item" fxLayout="row">
+      <div *ngFor="let item of pokemon_response.results; let i = index" class="item" fxLayout="row" (click)="loadPokemonData(item.url)">
       	<span class="number">{{i+1}}</span>
       	<span class="name">{{item.name}}</span>
       </div>
@@ -14,6 +14,22 @@
 </div>
 
 <div id="detailContainer" fxFlex fxLayout="column" >
-  <span class="no-pokemon">CHOOSE A POKÉMON</span>
+  <span class="no-pokemon" *ngIf="!current_pokemon">CHOOSE A POKÉMON</span>
+  <div fxLayout="row" *ngIf="current_pokemon">
+    <div class="main" fxLayout="column">
+      <div class="imageContainer">
+        <img src="{{current_image}}"/>
+      </div>
+      
+      <div  fxLayout="row" fxLayoutAlign="center none">
+        <div class="type" *ngFor="let type of current_pokemon.types;">
+          <span>{{type.type.name}}</span>
+        </div>
+      </div>
+      <span class="name">{{current_pokemon.name}}</span>
+      <span class="number">No. {{current_pokemon.id}}</span>
+    </div>
+    
+  </div>
 </div>
 
