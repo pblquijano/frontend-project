@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { AppComponent } from './app.component';
 import { DataService } from './data.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   AsyncCache,
   LocalStorageDriver,
@@ -33,6 +34,7 @@ export function asyncCacheOptionsFactory(): AsyncCacheOptions {
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     AsyncCacheModule.forRoot({
       provide: AsyncCacheOptions,
       useFactory: asyncCacheOptionsFactory

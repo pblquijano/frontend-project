@@ -1,10 +1,10 @@
-<div id="sideContainer">
-  <div class="side" fxLayout="column">
+<div id="sideContainer" *ngIf="!isMainLoading">
+  <div class="side" fxLayout="column"  [ngClass]="{'open': isOpenMenu}">
     <div class="header" fxLayout="row" fxLayoutAlign="none center">
     	<img src="../assets/images/pokeball.png" (click)="loadData()">
     	<span>POKÉDEX</span>
     </div>
-    <div fxFlex class="itemsContainer" >
+    <div fxFlex class="itemsContainer">
       <div *ngFor="let item of pokemon_response.results; let i = index" class="item" fxLayout="row" (click)="loadPokemonData(item.url)">
       	<span class="number">{{i+1}}</span>
       	<span class="name">{{item.name}}</span>
@@ -13,23 +13,41 @@
   </div>
 </div>
 
-<div id="detailContainer" fxFlex fxLayout="column" >
+<div id="detailContainer" fxFlex  *ngIf="!isMainLoading">
   <span class="no-pokemon" *ngIf="!current_pokemon">CHOOSE A POKÉMON</span>
-  <div fxLayout="row" *ngIf="current_pokemon">
-    <div class="main" fxLayout="column">
-      <div class="imageContainer">
-        <img src="{{current_image}}"/>
-      </div>
-      
-      <div  fxLayout="row" fxLayoutAlign="center none">
-        <div class="type" *ngFor="let type of current_pokemon.types;">
-          <span>{{type.type.name}}</span>
-        </div>
-      </div>
-      <span class="name">{{current_pokemon.name}}</span>
-      <span class="number">No. {{current_pokemon.id}}</span>
-    </div>
-    
+  <div>
+    <img class="btnMenu" src="../assets/images/ic_menu.svg" (click)="setMenuStatus(true)">
   </div>
+  <div class="mainContainer" fxLayout="column" *ngIf="current_pokemon">
+
+    <div fxLayout="row"  >
+      <div class="main" fxLayout="column">
+        <div class="imageContainer">
+          <img src="{{current_image}}">
+        </div>
+        <div  fxLayout="row" fxLayoutAlign="center none">
+          <div class="type" *ngFor="let type of current_pokemon.types;">
+            <span>{{type.type.name}}</span>
+          </div>
+        </div>
+        <span class="name">{{current_pokemon.name}}</span>
+        <span class="number">No. {{current_pokemon.id}}</span>
+      </div>
+      <div fxFlex></div>
+      <div class="infoContainer1">
+        
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+<div id="backdrop" (click)="setMenuStatus(false)" [ngClass]="{'open': isOpenMenu}" *ngIf="!isMainLoading"></div>
+<div id="mainLoading" fxLayout="column" fxLayoutAlign="center center" *ngIf="isMainLoading" [@fade]>
+  <div class ="containerAnim"fxLayout="row" >
+    <div id="pikachu"></div>
+    <div id="ash"></div>
+  </div>
+  <span>Loading</span>
 </div>
 
