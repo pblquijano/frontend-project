@@ -3,7 +3,7 @@
 </div>
 <div class="mainContainer" fxLayout="column" *ngIf="current_pokemon">
 
-  <div fxLayout="row"  >
+  <div fxLayout.gt-xs="row"  fxLayout="column" >
     <div class="main" fxLayout="column">
       <div class="imageContainer">
         <img src="{{current_image}}">
@@ -16,9 +16,45 @@
       <span class="name">{{current_pokemon.name}}</span>
       <span class="number">No. {{current_pokemon.id}}</span>
     </div>
-    <div fxFlex></div>
-    <div class="infoContainer1">
-      
+    <div fxFlex.gt-xs></div>
+    <div class="infoContainer1" fxLayout="column" >
+      <h1>SPRITES</h1>
+      <div class="sprites" fxLayout="row" fxLayoutAlign="center center">
+        <span>MALE</span>
+        <div class="sprite">
+          <img src="{{current_pokemon.sprites.front_default}}">
+        </div>
+        <div class="sprite">
+          <img src="{{current_pokemon.sprites.back_default}}">
+        </div>
+      </div>
+      <div class="sprites" fxLayout="row" fxLayoutAlign="center center">
+        <span>Female</span>
+        <div class="sprite female">
+          <img src="{{(current_pokemon.sprites.front_female)?current_pokemon.sprites.front_female:current_pokemon.sprites.front_default}}">
+        </div>
+        <div class="sprite female">
+          <img src="{{(current_pokemon.sprites.back_female)?current_pokemon.sprites.back_female:current_pokemon.sprites.back_default}}">
+        </div>
+      </div>
+      <div class="sprites" fxLayout="row" fxLayoutAlign="center center">
+        <span>MALE shiny</span>
+        <div class="sprite sMale">
+          <img src="{{current_pokemon.sprites.front_shiny}}">
+        </div>
+        <div class="sprite sMale">
+          <img src="{{current_pokemon.sprites.back_shiny}}">
+        </div>
+      </div>
+      <div class="sprites" fxLayout="row" fxLayoutAlign="center center">
+        <span>female shiny</span>
+        <div class="sprite sFemale">
+          <img src="{{(current_pokemon.sprites.front_shiny_female)?current_pokemon.sprites.front_shiny_female:current_pokemon.sprites.front_shiny}}">
+        </div>
+        <div class="sprite sFemale">
+          <img src="{{(current_pokemon.sprites.back_shiny_female)?current_pokemon.sprites.back_shiny_female:current_pokemon.sprites.back_shiny}}">
+        </div>
+      </div>
     </div>
   </div>
 

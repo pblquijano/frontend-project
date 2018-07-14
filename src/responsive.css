@@ -5,17 +5,130 @@
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
-
+    #detailContainer .mainContainer{
+        width: calc(100% - 24px);
+    }
 }
-
 /* Small Devices, Tablets */
 @media only screen and (min-width : 600px) {
+    #detailContainer .mainContainer{
+        width: 590px;
+        margin: 24px auto;
+
+    }
+    #detailContainer .main .imageContainer{
+        width: 275px;
+        height: 275px;
+    }
+    #detailContainer .main .imageContainer img{
+        width: 200px;
+        height: 200px;
+        margin: 0px;
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    #detailContainer .infoContainer1{
+        width: 275px;
+        margin-top: 0px;
+    }
+    #detailContainer .center-on-page {
+        transform: translate(-50%,-50%) scale(0.7);
+    }
+    #detailContainer .main .type{
+        width: 122px;
+        padding: 4px;
+    }
+    #detailContainer .main .type span{
+        font-size: 12px;
+    }
+     #detailContainer .main .name{
+        font-size: 24px;
+    }
+    #detailContainer .main .number{
+        font-size: 16px;
+    }
+    #detailContainer .infoContainer1 h1{
+        font-size: 32px;
+        margin-bottom: 6px;
+        margin-top: 12px;
+    }
+    #detailContainer .infoContainer1 .sprites{
+        margin: 6px 0px;
+    }
+    #detailContainer .infoContainer1 .sprites .sprite{
+        margin: 0px 8px;
+        width: 64px;
+        height: 64px;
+    }
+    #detailContainer .infoContainer1 .sprites .sprite img{
+        width: 64px;
+        height: 64px;
+    }
+    #detailContainer .infoContainer1 .sprites span{
+        width: 78px;
+        font-size: 14px;
+    }
 
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 960px) {
+    #detailContainer .mainContainer{
+        width: 800px;
+        margin: 36px auto;
+    }
+    #detailContainer .main .imageContainer{
+        width: 380px;
+        height: 380px;
+    }
+    #detailContainer .main .imageContainer img{
+        width: 300px;
+        height: 300px;
 
+    }
+    #detailContainer .infoContainer1{
+        width: 380px;
+    }
+    #detailContainer .center-on-page {
+        transform: translate(-50%,-50%) scale(1);
+    }
+    #detailContainer .main .type{
+        width: 160px;
+        padding: 6px;
+    }
+    #detailContainer .main .type span{
+        font-size: 14px;
+    }
+    #detailContainer .main .name{
+        font-size: 28px;
+    }
+    #detailContainer .main .number{
+        font-size: 20px;
+    }
+    #detailContainer .infoContainer1 h1{
+        font-size: 36px;
+        margin-bottom: 10px;
+        margin-top: 16px;
+    }
+    #detailContainer .infoContainer1 .sprites{
+        margin: 8px 0px;
+    }
+    #detailContainer .infoContainer1 .sprites .sprite{
+        margin: 0px 12px;
+        width: 82px;
+        height: 82px;
+    }
+    #detailContainer .infoContainer1 .sprites .sprite img{
+        width: 82px;
+        height: 82px;
+    }
+    #detailContainer .infoContainer1 .sprites span{
+        width: 84px;
+        font-size: 16px;
+    }
 }
 
 /* Large Devices, Wide Screens */

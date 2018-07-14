@@ -33,19 +33,31 @@ import {
 export class DetailComponent {
   public isLoading:boolean;
   public isError:boolean;
+  public isMale:boolean;
+  public isShiny:boolean;
   public current_pokemon: Pokemon;
   public current_image: string;
+  public sprite_front: string;
+  public sprite_back: string;
   public subscription;
   constructor(public ds:DataService, private trans: Transition){
     this.isLoading = true;
     this.isError = false;
+    this.isMale = true;
+    this.isShiny = false;
     var param = trans.params();
     this.current_pokemon = null;
+    this.current_image = "";
+    this.sprite_front = "";
+    this.sprite_back = "";
     this.current_image = "";
     this.loadPokemonData(param.name);
    
   }
-  
+
+  setGender(isMale){
+    
+  }
 
   loadPokemonData(name){
     this.subscription = this.ds
@@ -56,9 +68,10 @@ export class DetailComponent {
                                 this.current_pokemon= res;
                                 this.ds.setCurrentIndex(this.current_pokemon.id - 1);
                                 this.current_image = "https://pokeres.bastionbot.org/images/pokemon/"+this.current_pokemon.id+".png";                              
-                                
+                                this.sprite_front = this.current_pokemon.sprites.front_default;
+                                this.sprite_back = this.current_pokemon.sprites.back_default;
                                 this.isLoading = false;
-                                
+
                               }, 300);
                             },(err: HttpErrorResponse) => {
                               if (err.status==404) {

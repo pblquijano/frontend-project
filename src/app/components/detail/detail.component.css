@@ -14,8 +14,8 @@
 }
 
 .mainContainer{
-	width: 800px;
-	margin: 36px auto;
+	width: calc(100% - 12px);
+	margin: 12px auto;
 }
 
 .main{
@@ -24,29 +24,23 @@
 }
 .main .imageContainer{
 	position: relative;
-	/*background: url(../assets/images/pokedex_bg.png) no-repeat; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-position: center center;*/
 	background-color: #F4F4F4;
-	width: 380px;
-    height: 380px;
+	width: 100%;
+    height: auto;
     border-radius: 6px;
+    text-align: center;
 }
 .main .imageContainer img{
-	position: absolute;
-	width: 300px;
-    height: 300px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+	position: relative;
+	width:  calc(100% - 24px);
+    height:  auto;
+    margin: 12px auto;
+	
 }
 
 .main .type{
 	position: relative;
-	width: 160px;
+	width: 45%;
 	background:#ccc;
 	margin:6px 3px;
 	padding: 6px;
@@ -82,8 +76,51 @@
 }
 
 .infoContainer1{
-	background: #ccc;
-	width: 380px;
+	width: 100%;
+    border: 2px dashed #F4F4F4;
+    border-radius: 6px;
+    margin-top: 48px;
+}
+.infoContainer1 h1{
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 36px;
+    color: #565252;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+    margin-top: 16px;
+}
+
+.infoContainer1 .sprites{
+	margin: 8px 0px;
+}
+.infoContainer1 .sprites .sprite{
+	margin: 0px 12px;
+	background: #BBDEFB;
+	width: 82px;
+	height: 82px;
+	border-radius: 50%;
+}
+.infoContainer1 .sprites .sprite.female{
+	background: #F8BBD0;
+}
+.infoContainer1 .sprites .sprite.sMale{
+	background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+}
+.infoContainer1 .sprites .sprite.sFemale{
+	background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+}
+.infoContainer1 .sprites .sprite img{
+	width: 82px;
+	height: 82px;
+}
+.infoContainer1 .sprites span{
+	width: 84px;
+    font-family: Montserrat-SemiBold, sans-serif;
+    font-size: 16px;
+    color: #565252;
+    text-transform: uppercase;
 }
 
 #loading{
@@ -132,7 +169,7 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%) scale(0.5);
 }
 .pokeball {
 	position: relative;
