@@ -1,0 +1,12 @@
+<div class="side" fxLayout="column"  [ngClass]="{'open': ds.isOpenMenu}">
+  <div class="header" fxLayout="row" fxLayoutAlign="none center">
+    <img src="../assets/images/pokeball.png" (click)="loadData()">
+    <span>POKÉDEX</span>
+  </div>
+  <div fxFlex class="itemsContainer">
+    <div *ngFor="let item of pokemon_response.results; let i = index" class="item" fxLayout="row" (click)="loadPokemonPage(item.name, i)" [ngClass]="{'selected': ds.currentIndex == i}" [id]="'poke-' + i">
+      <span class="number">{{i+1}}</span>
+      <span class="name">{{item.name}}</span>
+    </div>
+  </div>
+</div>

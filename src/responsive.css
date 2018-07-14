@@ -1,0 +1,36 @@
+/*RESPONSIVE*/
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 600px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 960px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1280px) {
+    #sideContainer{
+        width: 360px;
+    }
+    #sideContainer .side{
+        transform: translate(0px, 0px);
+    }
+    #detailContainer .btnMenu{
+        display: none;
+        opacity: 0;
+        margin: 0px;
+    }
+    
+
+}

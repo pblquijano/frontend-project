@@ -1,0 +1,37 @@
+<div>
+  <img class="btnMenu" src="../assets/images/ic_menu.svg" (click)="ds.setMenuStatus(true)">
+</div>
+<div class="mainContainer" fxLayout="column" *ngIf="current_pokemon">
+
+  <div fxLayout="row"  >
+    <div class="main" fxLayout="column">
+      <div class="imageContainer">
+        <img src="{{current_image}}">
+      </div>
+      <div  fxLayout="row" fxLayoutAlign="center none">
+        <div class="type" *ngFor="let type of current_pokemon.types;">
+          <span>{{type.type.name}}</span>
+        </div>
+      </div>
+      <span class="name">{{current_pokemon.name}}</span>
+      <span class="number">No. {{current_pokemon.id}}</span>
+    </div>
+    <div fxFlex></div>
+    <div class="infoContainer1">
+      
+    </div>
+  </div>
+
+</div>
+<div id="loading" *ngIf="isLoading" [@fade]>
+  <div class="center-on-page">
+  
+    <div class="pokeball">
+      <div class="pokeball__button"></div>
+    </div>
+    
+  </div>
+</div>
+<div id="resultError" *ngIf="isError">
+  <span>Error 404<br>Pokémon not found</span>
+</div>

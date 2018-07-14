@@ -49,182 +49,16 @@
 	transition: all 0.25s linear;
 	z-index: 3;
 }
-#sideContainer .side{
-	position: absolute;
-	width: 360px;
-	height: 100%;
-	top: 0px;
-	background: #565252;
-	bottom: 0px;
-	left: 0px;
-	z-index: 4;
-	transform: translate(-100%, 0px);
-	transition: all 0.25s linear;	
-}
-#sideContainer .side.open{
-	transform: translate(0, 0px)!important;
-}
-#sideContainer .side .header{
-	height: 100px;
-	min-height: 100px;
-	background: #343030;
-	box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12);
-	z-index: 6;
-}
-#sideContainer .side .header img{
-	height: 64px;
-	width:  64px;
-	margin-right: 8px;
-	margin-left: 34px;
-}
-#sideContainer .side .header span{
-	font-family: Montserrat-Regular, sans-serif;
-	font-size: 36px;
-	color: #fff;
-}
-#sideContainer .side .itemsContainer{
-	overflow-x: hidden;
-	overflow-y: auto;
-	z-index: 5;
-}
-#sideContainer .side .itemsContainer .item{
-	width: 100%;
-	padding: 8px 38px;
-	transition: background 0.2s linear;
-	cursor: pointer;
-}
-#sideContainer .side .itemsContainer .item:first-child{
-	margin-top: 8px;
-}
-#sideContainer .side .itemsContainer .item:hover{
-	background:rgba(0,0,0,0.15);
-}
-#sideContainer .side .itemsContainer .item.selected{
-	background:rgba(0,0,0,0.3);
-}
-#sideContainer .side .itemsContainer .item .number{
-	font-family: Montserrat-Regular, sans-serif;
-	font-size: 12px;
-	color: rgba(255,255,255,0.25);
-	margin-right: 16px;
-	width: 30px;
-	text-align: right;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-#sideContainer .side .itemsContainer .item .name{
-	font-family: Montserrat-Regular, sans-serif;
-	font-size: 12px;
-	color: #fff;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
 
-
-
-/*CONTENT*/
 
 #detailContainer{
 	position: relative;
 	z-index: 1;
-
 }
+
+
 img{border:0;}
-#detailContainer .btnMenu{
-	position: relative;
-	width: 36px;
-    height: 36px;
-    margin: 32px 0px 0px 24px;
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity 0.15s linear;
-    display: block;
 
-}
-#detailContainer .no-pokemon{
-	position: absolute;
-	width: calc(100% - 16px);
-	top:50%;
-	left: 50%;	
-	transform: translate(-50%,-50%);
-	text-align: center;
-	font-family: Montserrat-SemiBold, sans-serif;
-    font-size: 60px;
-    letter-spacing: 4px;
-    color: rgba(0,0,0,0.08)
-}
-#detailContainer .mainContainer{
-	width: 800px;
-	margin: 36px auto;
-}
-
-#detailContainer .main{
-	position: relative;
-	
-}
-#detailContainer .main .imageContainer{
-	position: relative;
-	/*background: url(../assets/images/pokedex_bg.png) no-repeat; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-position: center center;*/
-	background-color: #F4F4F4;
-	width: 380px;
-    height: 380px;
-    border-radius: 6px;
-}
-#detailContainer .main .imageContainer img{
-	position: absolute;
-	width: 300px;
-    height: 300px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-}
-
-#detailContainer .main .type{
-	position: relative;
-	width: 160px;
-	background:#ccc;
-	margin:6px 3px;
-	padding: 6px;
-	border-radius: 3px;
-}
-#detailContainer .main .type span{
-	display: block;
-	width: 100%;
-	text-align: center;
-	font-family: Montserrat-SemiBold, sans-serif;
-	font-size: 14px;
-    letter-spacing: 1px;
-    color: #000;
-    text-transform: uppercase;
-}
-#detailContainer .main .name{
-	font-family: Montserrat-Bold, sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
-    color: #000;
-    text-align: center;
-    margin-top: 6px;
-    text-transform: uppercase;
-}
-#detailContainer .main .number{
-	font-family: Montserrat-SemiBold, sans-serif;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #c5c5c5;
-    text-align: center;
-    line-height: 22px;
-
-}
-
-#detailContainer .infoContainer1{
-	background: #ccc;
-	width: 380px;
-}
 
 /*RESPONSIVE*/
 @media only screen and (min-width : 320px) {
@@ -262,10 +96,6 @@ img{border:0;}
 	
 
 }
-
-
-
-
 
 /*Resource: https://codepen.io/andrewarchi/pen/OXEEgL*/
 #ash {
