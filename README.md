@@ -16,6 +16,7 @@ Module, Singleton and MVC.
 ## Deploy
 ### Development Mode (needs NodeJS and Angular CLI)
 ```
+npm install
 ng serve --open
 ```
 
