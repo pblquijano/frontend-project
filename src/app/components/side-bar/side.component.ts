@@ -3,7 +3,6 @@ import { Pokemon_response } from '../../models/pokemon_response';;
 import {DataService} from '../../data.service';
 import {Subscription} from 'rxjs';
 import { StateService } from '@uirouter/angular';
-import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {
   trigger,
   state,
@@ -31,19 +30,17 @@ import {
 })
 export class SideComponent {
   public pokemon_response: Pokemon_response;
-  public activeMediaQuery = "";
   public subscription;
-  constructor(public ds:DataService, media: ObservableMedia, private $state: StateService){
-    this.loadListData();
+  constructor(public ds:DataService, private $state: StateService){    
     this.pokemon_response = new Pokemon_response([]);
+    this.loadListData();
   }
   loadListData(){
-  	console.log("Corre");
+    //Consumes the service to obtain the pokémon list
     this.subscription = this.ds
                             .getPokemonList()
                             .subscribe((res) => {
                               this.pokemon_response = res;
-                              console.log(res);
                               setTimeout(() => {
                                     this.ds.setLoadingStatus(false);
                               }, 500);
@@ -52,9 +49,10 @@ export class SideComponent {
   }
 
   loadPokemonPage(name, index){
-    
+    //Sets the current index for show it in the side bar
     this.ds.currentIndex=index;
     this.ds.setMenuStatus(false);
+    //Loads the pokemon detail view
     this.$state.go("detail", {name: name});
   }
 
@@ -65,6 +63,5 @@ export class SideComponent {
   
   ngOnDestroy(){
     this.subscription.unsubscribe();
-    console.log('Destroyed');
   }
 }

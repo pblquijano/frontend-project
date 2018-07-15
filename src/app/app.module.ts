@@ -8,6 +8,7 @@ import { EmptyComponent } from './components/empty/empty.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { DataService } from './data.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import { UIRouterModule, UIView } from '@uirouter/angular';
 import { routerConfigFn } from './router.config';
 import { APP_STATES } from './app.states';
@@ -44,6 +45,7 @@ export function asyncCacheOptionsFactory(): AsyncCacheOptions {
   imports: [
     UIRouterModule.forRoot({ states: APP_STATES, otherwise: { state: 'home' },config: routerConfigFn}),
     BrowserModule,
+    Ng2OrderModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ScrollToModule.forRoot(),

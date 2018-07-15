@@ -9,7 +9,7 @@
         <img src="{{current_image}}">
       </div>
       <div  fxLayout="row" fxLayoutAlign="center none">
-        <div class="type" *ngFor="let type of current_pokemon.types;">
+        <div class="type" *ngFor="let type of current_pokemon.types |  orderBy : 'slot' : false" [ngStyle]="{'background': type.type.background, 'color': type.type.color}">
           <span>{{type.type.name}}</span>
         </div>
       </div>
@@ -19,7 +19,7 @@
     <div fxFlex.gt-xs></div>
     <div class="infoContainer1" fxLayout="column" >
       <h1>SPRITES</h1>
-      <div class="sprites" fxLayout="row" fxLayoutAlign="center center">
+      <div class="sprites" fxLayout="row" fxLayoutAlign="center center" *ngIf="current_pokemon.id != 29 && current_pokemon.id != 30 && current_pokemon.id != 31">
         <span>MALE</span>
         <div class="sprite">
           <img src="{{current_pokemon.sprites.front_default}}">
@@ -28,7 +28,7 @@
           <img src="{{current_pokemon.sprites.back_default}}">
         </div>
       </div>
-      <div class="sprites" fxLayout="row" fxLayoutAlign="center center">
+      <div class="sprites" fxLayout="row" fxLayoutAlign="center center" *ngIf="current_pokemon.id != 32 && current_pokemon.id != 33 && current_pokemon.id != 34">
         <span>Female</span>
         <div class="sprite female">
           <img src="{{(current_pokemon.sprites.front_female)?current_pokemon.sprites.front_female:current_pokemon.sprites.front_default}}">
@@ -37,7 +37,7 @@
           <img src="{{(current_pokemon.sprites.back_female)?current_pokemon.sprites.back_female:current_pokemon.sprites.back_default}}">
         </div>
       </div>
-      <div class="sprites" fxLayout="row" fxLayoutAlign="center center">
+      <div class="sprites" fxLayout="row" fxLayoutAlign="center center" *ngIf="current_pokemon.id != 29 && current_pokemon.id != 30 && current_pokemon.id != 31">
         <span>MALE shiny</span>
         <div class="sprite sMale">
           <img src="{{current_pokemon.sprites.front_shiny}}">
@@ -46,7 +46,7 @@
           <img src="{{current_pokemon.sprites.back_shiny}}">
         </div>
       </div>
-      <div class="sprites" fxLayout="row" fxLayoutAlign="center center">
+      <div class="sprites" fxLayout="row" fxLayoutAlign="center center" *ngIf="current_pokemon.id != 32 && current_pokemon.id != 33 && current_pokemon.id != 34">
         <span>female shiny</span>
         <div class="sprite sFemale">
           <img src="{{(current_pokemon.sprites.front_shiny_female)?current_pokemon.sprites.front_shiny_female:current_pokemon.sprites.front_shiny}}">
@@ -54,6 +54,29 @@
         <div class="sprite sFemale">
           <img src="{{(current_pokemon.sprites.back_shiny_female)?current_pokemon.sprites.back_shiny_female:current_pokemon.sprites.back_shiny}}">
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="infoContainer2" fxLayout="column" >
+    <h1>Base stats</h1>
+    <div fxLayout.gt-xs="row"  fxLayout="column" fxLayoutAlign.gt-xs="center none" fxLayoutAlign="none center"> 
+      <div class="resume" fxLayout="column" >
+        <span class="text">Weight</span>
+        <span class="number" [ngStyle]="{'color': current_pokemon.types[0].type.background}">{{current_pokemon.weight/10}}kg</span>
+      </div>
+      <div class="resume" fxLayout="column" >
+        <span class="text">Height</span>
+        <span class="number" [ngStyle]="{'color': current_pokemon.types[0].type.background}">{{current_pokemon.height/10}}m</span>
+      </div>
+      <div class="resume" fxLayout="column" >
+        <span class="text">Base experience</span>
+        <span class="number" [ngStyle]="{'color': current_pokemon.types[0].type.background}">{{current_pokemon.base_experience}}xp</span>
+      </div>
+    </div>
+    <div fxLayout="column" class="power" *ngFor="let stat of current_pokemon.stats">
+      <span>{{stat.stat.name}}: <span class="bold">{{stat.base_stat}}</span></span>
+      <div class="graphContainer">
+        <div class="graph" [ngStyle]="{'width': stat.percent+'%'}"></div>
       </div>
     </div>
   </div>

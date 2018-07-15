@@ -23,7 +23,7 @@ export function returnTo ($transition$: Transition): any {
   return $state.target('home');
 }
 
-
+//ROUTING SETTINGS
 export const appState = {
 
   name: 'app',

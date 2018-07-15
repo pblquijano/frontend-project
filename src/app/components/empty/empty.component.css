@@ -6,9 +6,11 @@
 	transform: translate(-50%,-50%);
 	text-align: center;
 	font-family: Montserrat-SemiBold, sans-serif;
-    font-size: 60px;
-    letter-spacing: 4px;
-    color: rgba(0,0,0,0.08)
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: rgba(0,0,0,0.3);
+    transition: all 0.2s linear;
+
 }
 .btnMenu{
 	position: relative;

@@ -1,6 +1,6 @@
 
 
-/*CONTENT*/
+/*POKEMON DETAILS*/
 .btnMenu{
 	position: relative;
 	width: 36px;
@@ -10,7 +10,6 @@
     opacity: 1;
     transition: opacity 0.15s linear;
     display: block;
-
 }
 
 .mainContainer{
@@ -26,15 +25,22 @@
 	position: relative;
 	background-color: #F4F4F4;
 	width: 100%;
-    height: auto;
     border-radius: 6px;
     text-align: center;
 }
+.main .imageContainer:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
 .main .imageContainer img{
-	position: relative;
-	width:  calc(100% - 24px);
-    height:  auto;
-    margin: 12px auto;
+	position: absolute;
+	width: calc(100% - 48px);
+    height: calc(100% - 48px);
+    margin: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 	
 }
 
@@ -42,6 +48,7 @@
 	position: relative;
 	width: 45%;
 	background:#ccc;
+	color: #000;
 	margin:6px 3px;
 	padding: 6px;
 	border-radius: 3px;
@@ -53,7 +60,7 @@
 	font-family: Montserrat-SemiBold, sans-serif;
 	font-size: 14px;
     letter-spacing: 1px;
-    color: #000;
+    
     text-transform: uppercase;
 }
 .main .name{
@@ -81,22 +88,23 @@
     border-radius: 6px;
     margin-top: 48px;
 }
-.infoContainer1 h1{
+.infoContainer1 h1, .infoContainer2 h1{
     font-family: Montserrat-Bold, sans-serif;
     font-size: 36px;
+    line-height: 38px;
     color: #565252;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 10px;
     letter-spacing: 4px;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .infoContainer1 .sprites{
 	margin: 8px 0px;
 }
 .infoContainer1 .sprites .sprite{
-	margin: 0px 12px;
+	margin: 0px 6px;
 	background: #BBDEFB;
 	width: 82px;
 	height: 82px;
@@ -116,12 +124,69 @@
 	height: 82px;
 }
 .infoContainer1 .sprites span{
-	width: 84px;
+	width: 54px;
     font-family: Montserrat-SemiBold, sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     color: #565252;
     text-transform: uppercase;
 }
+
+.infoContainer2{
+	width: 100%;
+    border: 2px solid #F4F4F4;
+    border-radius: 6px;
+	margin: 48px 0px;
+}
+.infoContainer2 .resume{
+	margin: 5px 24px 10px 24px;
+}
+.infoContainer2 .resume .text{
+	font-family: Montserrat-Regular, sans-serif;
+    font-size: 12px;
+    color: #9c9c9c;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+.infoContainer2 .resume .number{
+	font-family: Montserrat-Bold, sans-serif;
+    font-size: 48px;
+    color: #212121;
+    line-height: 1;
+}
+.infoContainer2 .power{
+	margin: 15px;
+}
+.infoContainer2 .power span{
+	font-family: Montserrat-Regular, sans-serif;
+    font-size: 16px;
+    color: #9c9c9c;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.infoContainer2 .power span.bold{
+	font-family: Montserrat-Bold, sans-serif;
+	color: #565252;
+}
+.infoContainer2 .power .graphContainer{
+	position: relative;
+	width: 100%;
+	height: 14px;
+    border-radius: 7px;
+	overflow:hidden;
+	background: #ccc;
+}
+
+.infoContainer2 .power .graphContainer .graph{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 50%;
+	height: 14px;
+	background: #565252;
+}
+
+
 
 #loading{
 	position: absolute;
@@ -151,15 +216,15 @@
     transform: translate(-50%,-50%);
     text-align: center;
     font-family: Montserrat-SemiBold, sans-serif;
-    font-size: 36px;
-    letter-spacing: 2px;
+    font-size: 24px;
+    letter-spacing: 1px;
     color: rgba(0,0,0,0.4);
     text-transform: uppercase;
 }
 
 
 
-/* Poké Styles */
+/*https://codepen.io/raubaca/pen/obaZmG*/
 *, *:before, *:after {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;

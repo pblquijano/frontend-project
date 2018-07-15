@@ -1,16 +1,52 @@
 /*RESPONSIVE*/
-@media only screen and (min-width : 320px) {
-
-}
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
+    #sideContainer .side{
+        width: 360px;
+    }
+    #sideContainer .side .header{
+        height: 100px;
+        min-height: 100px;
+    }
+    #sideContainer .side .header img{
+        height: 64px;
+        width:  64px;
+        margin-right: 8px;
+        margin-left: 34px;
+    }
+    #sideContainer .side .header span{
+        font-size: 36px;
+    }
+    #sideContainer .side .itemsContainer .item{
+        padding: 8px 38px;
+    }
     #detailContainer .mainContainer{
         width: calc(100% - 24px);
+    }
+    #detailContainer .infoContainer1 .sprites .sprite{
+        margin: 0px 12px;
+        width: 82px;
+        height: 82px;
+    }
+    #detailContainer  .infoContainer1 .sprites span{
+        width: 84px;
+        font-size: 16px;
     }
 }
 /* Small Devices, Tablets */
 @media only screen and (min-width : 600px) {
+    #detailContainer .no-pokemon{
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+    #detailContainer #resultError span{
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    #detailContainer .infoContainer2 .resume .text{
+        text-align: left;
+    }
     #detailContainer .mainContainer{
         width: 590px;
         margin: 24px auto;
@@ -18,17 +54,11 @@
     }
     #detailContainer .main .imageContainer{
         width: 275px;
-        height: 275px;
     }
     #detailContainer .main .imageContainer img{
         width: 200px;
         height: 200px;
-        margin: 0px;
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        
     }
     #detailContainer .infoContainer1{
         width: 275px;
@@ -76,13 +106,16 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 960px) {
+    #detailContainer .no-pokemon{
+        font-size: 60px;
+        letter-spacing: 4px;
+    }
     #detailContainer .mainContainer{
         width: 800px;
         margin: 36px auto;
     }
     #detailContainer .main .imageContainer{
         width: 380px;
-        height: 380px;
     }
     #detailContainer .main .imageContainer img{
         width: 300px;
@@ -133,6 +166,9 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1280px) {
+    #detailContainer .no-pokemon{
+         color: rgba(0,0,0,0.08);
+    }
     #sideContainer{
         width: 360px;
     }
